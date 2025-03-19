@@ -1,0 +1,49 @@
+
+/*Parte 4 Comienzo*/
+.parte4 {
+    max-width: 800px; /* Ajusta el ancho del carrusel */
+    margin: auto; /* Centra el carrusel */
+    padding: 20px;
+}
+
+.carousel-item {
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-caption {
+    position: absolute;
+    display: block;
+    justify-content: center;
+    text-align: center;
+    bottom: 20px;
+    left: 10%;
+    right: 10%;
+    background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+}
+
+.carousel-caption h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.carousel-caption p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.carousel-caption button {
+    font-size: 14px;
+    padding: 8px 12px;
+    transition: all 0.3s ease-in-out;
+}
+.carousel-caption button:hover {
+    transform: scale(1.1);
+    background-color: #0056b3
+}
+/*Parte 4 final*/

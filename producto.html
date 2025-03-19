@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/product.css">
+  <title>Detalles del Producto</title>
+</head>
+<body>
+<header>
+  <nav class="menu">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="container">
+  <h1 id="producto-nombre">Cargando producto...</h1>
+  <img id="producto-imagen" src="img/img.png" alt="Imagen del producto" class="img-fluid" onerror="this.src='img/img_1.png'">  <p id="producto-descripcion">Cargando descripción...</p>
+  <a href="#" class="boton-comprar">Comprar ahora</a>
+  <button onclick="window.history.back()" class="boton-volver">Volver</button>
+</div>
+<script defer src="js/script.js"></script>
+</body>
+</html>
