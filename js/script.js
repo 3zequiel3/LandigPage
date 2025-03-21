@@ -1,50 +1,55 @@
+console.log("✅ script.js ha sido cargado");
 
+
+/**Parte 4*/
 /*Seleccion de Datos por producto */
 /*Esta linea de codigo se encarga de hacer que cada vez que se aprieta un boton de comprar se
 * redirija directamente a una plantilla, y rellene esa plantilla en funcion de los datos del producto a comprar*/
+/***************/
+console.log("✅ script.js ha sido cargado correctamente");
+
+// 📌 Asignar eventos usando DOM a los botones "Comprar"
 document.addEventListener("DOMContentLoaded", function () {
-    // 1️⃣ Redirección desde index.html con los datos correctos
     document.querySelectorAll(".comprar-btn").forEach(button => {
         button.addEventListener("click", function () {
             let item = this.closest(".carousel-item");
 
-            if (!item) return; // Evita errores si el botón no está dentro de un producto
+            if (!item) {
+                console.error("❌ No se encontró el producto.");
+                return;
+            }
 
-            let name = item.dataset.name || "Producto sin nombre";
-            let desc = item.dataset.desc || "Sin descripción disponible";
-            let img = item.dataset.img || "img/default.png"; // Imagen por defecto si falta
+            // Obtener los datos desde el contenido del HTML
+            let name = item.querySelector("h3")?.textContent.trim() || "Producto sin nombre";
+            let desc = item.querySelector("p")?.textContent.trim() || "Sin descripción disponible";
+            let img = item.querySelector("img")?.src || "img/default.png";
 
+            console.log("📤 Enviando datos:", { name, desc, img });
+
+            // Construcción de la URL
             let url = `producto.html?name=${encodeURIComponent(name)}&desc=${encodeURIComponent(desc)}&img=${encodeURIComponent(img)}`;
-            console.log("Redirigiendo a:", url); // 🔍 Verifica que la URL sea correcta
             window.location.href = url;
         });
     });
 
-    // 2️⃣ Carga de datos en producto.html
-    if (window.location.pathname.includes("producto.html")) {
+    // 📌 Cargar los datos en producto.html
+    if (document.getElementById("producto-nombre")) {
         const params = new URLSearchParams(window.location.search);
 
         let nombre = params.get("name");
         let imagen = params.get("img");
         let descripcion = params.get("desc");
 
-        console.log("🔍 Parámetros de la URL:", { nombre, imagen, descripcion });
+        console.log("🔍 Datos recibidos desde la URL:", { nombre, imagen, descripcion });
 
         if (nombre && imagen && descripcion) {
-            let nombreElemento = document.getElementById("producto-nombre");
-            let imagenElemento = document.getElementById("producto-imagen");
-            let descripcionElemento = document.getElementById("producto-descripcion");
-
-            if (nombreElemento && imagenElemento && descripcionElemento) {
-                nombreElemento.textContent = nombre;
-                imagenElemento.src = imagen;
-                imagenElemento.alt = `Imagen de ${nombre}`;
-                descripcionElemento.textContent = descripcion;
-            } else {
-                console.error("❌ No se encontraron los elementos HTML necesarios.");
-            }
+            document.getElementById("producto-nombre").textContent = nombre;
+            document.getElementById("producto-imagen").src = imagen;
+            document.getElementById("producto-imagen").alt = `Imagen de ${nombre}`;
+            document.getElementById("producto-descripcion").textContent = descripcion;
         } else {
             console.error("❌ No se encontraron datos en la URL.");
         }
     }
 });
+/***************/
