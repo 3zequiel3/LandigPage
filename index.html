@@ -68,7 +68,36 @@
             </button>
         </div>
     </div>
+
     <div class="parte3">
+        <!-- Galería de imágenes (Carrusel) -->
+<div class="container" id="galeria">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner" id="gallery">
+            <!-- Las imágenes se insertarán dinámicamente -->
+        </div>
+        <button class="carousel-control-prev custom-arrow" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next custom-arrow" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+</div>
+<!-- Sección de descripción del producto -->
+<div class="container" id="product-detail" style="display: none;">
+    <div class="producto-detalle">
+        <img id="producto-imagen" class="img-fluid" src="" alt="Producto">
+        <div class="producto-info">
+            <h2 id="producto-nombre"></h2>
+            <p id="producto-descripcion"></p>
+            <button class="boton-comprar">Comprar ahora</button>
+            <button class="boton-volver">Volver</button>
+        </div>
+    </div>
+</div>
     </div>
 </div>
 
