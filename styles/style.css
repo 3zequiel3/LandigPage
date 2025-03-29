@@ -39,7 +39,114 @@
     cursor: not-allowed;
 }
 
+/* Galeria - parte 3 */
+/* Estilos del carrusel */
+.container {
+    max-width: 600px; /* Ajusta el ancho del carrusel */
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
 
+/* Ajustar tamaño del carrusel */
+.carousel {
+    max-width: 600px;
+    margin: auto;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* Flechas del carrusel más grandes y visibles */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 60px; /* Aumentamos el tamaño */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%); /* Hace las flechas blancas */
+    width: 30px; /* Aumentamos el tamaño de la flecha */
+    height: 30px;
+}
+
+/* Ajustar tamaño de la imagen en la descripción */
+.img-fluid {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    max-width: 100%;
+    display: block;
+}
+
+/* Sección de detalles del producto */
+.producto-detalle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.producto-info {
+    text-align: center;
+    max-width: 500px;
+}
+
+.producto-info h2 {
+    font-size: 24px;
+}
+
+.producto-info p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Botones con efectos */
+.boton-comprar, .boton-volver {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.boton-comprar:hover {
+    background-color: #0056b3;
+}
+
+.boton-comprar:active {
+    background-color: #004494;
+    transform: scale(0.95);
+}
+
+.boton-volver {
+    background-color: #ddd;
+    color: black;
+}
+
+.boton-volver:hover {
+    background-color: #bbb;
+}
+
+.boton-volver:active {
+    background-color: #999;
+    transform: scale(0.95);
+}
+/* Fin parte 3 */
 
 
 /*Parte 4 Comienzo*/
