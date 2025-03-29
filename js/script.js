@@ -1,5 +1,52 @@
 console.log("✅ script.js ha sido cargado");
 
+/*Galeria - parte 3*/
+document.addEventListener("DOMContentLoaded", function () {
+    // Lista de imágenes con su descripción
+    const productos = [
+        { src: "img/zapatilla1.jpg", nombre: "Zapatilla 1", descripcion: "Zapatilla deportiva moderna." },
+        { src: "img/zapatilla2.jpg", nombre: "Zapatilla 2", descripcion: "Zapatilla cómoda para correr." },
+        { src: "img/zapatilla3.jpg", nombre: "Zapatilla 3", descripcion: "Zapatilla casual y ligera." }
+    ];
+
+    const gallery = document.getElementById("gallery");
+
+    // Crear las imágenes dentro del carrusel
+    productos.forEach((producto, index) => {
+        const item = document.createElement("div");
+        item.className = `carousel-item ${index === 0 ? "active" : ""}`;
+        
+        const img = document.createElement("img");
+        img.src = producto.src;
+        img.className = "d-block w-100";
+        img.alt = producto.nombre;
+        img.dataset.index = index;
+    
+        // Evento de clic para mostrar detalles
+        img.addEventListener("click", function () {
+            mostrarDetalle(productos[index]);
+        });
+
+        item.appendChild(img);
+        gallery.appendChild(item);
+    });
+
+    // Función para mostrar la descripción del producto
+    function mostrarDetalle(producto) {
+        document.getElementById("galeria").style.display = "none"; 
+        document.getElementById("product-detail").style.display = "block"; 
+        document.getElementById("producto-nombre").textContent = producto.nombre;
+        document.getElementById("producto-imagen").src = producto.src;
+        document.getElementById("producto-descripcion").textContent = producto.descripcion;
+    }
+
+    // Evento para volver a la galería
+    document.querySelector(".boton-volver").addEventListener("click", function () {
+        document.getElementById("galeria").style.display = "block"; 
+        document.getElementById("product-detail").style.display = "none"; 
+    });
+});
+/*Fin parte 3*/
 
 /**Parte 4*/
 /*Seleccion de Datos por producto */
